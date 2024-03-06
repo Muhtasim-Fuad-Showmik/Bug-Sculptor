@@ -14,7 +14,7 @@ const NavBar = () => {
   ];
 
   return (
-    <nav className="flex space-x-6 border-b items-center mb-5 px-5 h-16">
+    <nav className="flex space-x-6 border-b border-gray-200 items-center mb-5 px-5 h-16 backdrop-filter backdrop-blur-lg bg-opacity-30 sticky top-0 z-10 bg-white">
       <Link href="/" className="flex space-x-3 items-center">
         <Image
           src="/logo.png"

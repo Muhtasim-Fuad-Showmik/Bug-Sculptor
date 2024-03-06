@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./NavBar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const tenorite = localFont({
   src: [
@@ -30,8 +31,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={tenorite.variable}>
-        <NavBar />
-        <main className="p-5">{children}</main>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <NavBar />
+          <main className="p-5">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );

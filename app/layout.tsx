@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "./NavBar";
 
-const inter = Inter({ subsets: ["latin"] });
+const tenorite = localFont({
+  src: [
+    {
+      path: "../public/fonts/tenorite-reg.ttf",
+      weight: "400",
+    },
+    {
+      path: "../public/fonts/tenorite-bold.ttf",
+      weight: "700",
+    },
+  ],
+  variable: "--font-tenorite",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={tenorite.variable}>
         <NavBar />
         <main>{children}</main>
       </body>

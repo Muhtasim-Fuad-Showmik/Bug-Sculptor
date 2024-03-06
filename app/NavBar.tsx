@@ -22,7 +22,7 @@ const NavBar = () => {
           height={50}
           alt="Bug Sculptor Logo"
         ></Image>
-        <span className="text-2xl">Bug Sculptor</span>
+        <span className="text-3xl font-bold">Bug Sculptor</span>
       </Link>
       <ul className="flex space-x-6">
         {links.map((link) => (

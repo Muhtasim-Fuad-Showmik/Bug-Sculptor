@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -9,20 +8,22 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import Link from "next/link";
-import prisma from "@/prisma/client";
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
+import IssueToolbar from "./IssueToolbar";
+import prisma from "@/prisma/client";
+
+// Uncomment to delay load time and view the skeleton loading screen
+// import delay from "delay";
 
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
 
+  // Uncomment to delay load time and view the skeleton loading screen
+  // await delay(2000);
+
   return (
     <div>
-      <div className="mb-5">
-        <Button>
-          <Link href="/issues/new">+ Create</Link>
-        </Button>
-      </div>
+      <IssueToolbar />
       <Table>
         <TableCaption>A list of your tracked issues.</TableCaption>
         <TableHeader>

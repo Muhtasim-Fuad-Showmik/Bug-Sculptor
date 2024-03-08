@@ -22,7 +22,7 @@ const NavBar = () => {
   ];
 
   return (
-    <NavigationMenu className="flex justify-between w-screen border-b border-gray-200 items-center mb-5 px-5 h-16 backdrop-filter backdrop-blur-lg bg-opacity-30 sticky top-0 z-10 bg-white">
+    <NavigationMenu className="flex justify-between w-screen border-b border-accent border-2 items-center mb-5 px-5 h-16 backdrop-filter backdrop-blur-lg bg-opacity-30 sticky top-0 z-10">
       <NavigationMenuList className="space-x-3">
         <NavigationMenuItem>
           <Link href="/" className="flex space-x-3 items-center">

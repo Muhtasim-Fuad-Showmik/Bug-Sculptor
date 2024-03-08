@@ -8,8 +8,8 @@ const LabelWithErrorMessage = ({
   errorMessage,
 }: {
   htmlFor: string;
-  label: String;
-  errorMessage: String | undefined;
+  label: string;
+  errorMessage: string | undefined;
 }) => {
   return (
     <div className="flex items-center h-4 space-x-3">

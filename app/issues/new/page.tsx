@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import LabelWithErrorMessage from "@/app/components/LabelWithErrorMessage";
+import Loader from "@/app/components/Loader";
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
@@ -28,6 +29,7 @@ const NewIssuePage = () => {
     resolver: zodResolver(createIssueSchema),
   });
   const [error, setError] = useState("");
+  const [isSubmitting, setSubmitting] = useState(false);
 
   return (
     <div className="max-w-xl">
@@ -42,9 +44,11 @@ const NewIssuePage = () => {
         className="space-y-3"
         onSubmit={handleSubmit(async (data) => {
           try {
+            setSubmitting(true);
             await axios.post("/api/issues", data);
             router.push("/issues");
           } catch (error) {
+            setSubmitting(false);
             setError("An unexpected error occured.");
           }
         })}
@@ -76,7 +80,10 @@ const NewIssuePage = () => {
             )}
           />
         </div>
-        <Button>Submit</Button>
+        <Button className="space-x-3" disabled={isSubmitting}>
+          <span>Submit</span>
+          {isSubmitting && <Loader size="12" stroke="2" />}
+        </Button>
       </form>
     </div>
   );

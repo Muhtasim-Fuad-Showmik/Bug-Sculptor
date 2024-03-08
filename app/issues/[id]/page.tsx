@@ -3,6 +3,9 @@ import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 
 const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
+  // Redirect users to the "Not Found" page for invalid query parameters for the ID
+  if (typeof params.id !== "number") notFound();
+
   // Get the issue from the database the ID of which has been
   // specified in the URL parameters to hit this page.
   const issue = await prisma.issue.findUnique({

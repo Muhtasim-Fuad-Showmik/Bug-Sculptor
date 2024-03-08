@@ -11,6 +11,7 @@ import {
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
 import IssueToolbar from "./IssueToolbar";
 import prisma from "@/prisma/client";
+import Link from "next/link";
 
 // Uncomment to delay load time and view the skeleton loading screen
 // import delay from "delay";
@@ -36,8 +37,8 @@ const IssuesPage = async () => {
         <TableBody>
           {issues.map((issue) => (
             <TableRow key={issue.id}>
-              <TableCell className="font-medium">
-                {issue.title}
+              <TableCell className="font-bold">
+                <Link href={`/issues/${issue.id}`}>{issue.title}</Link>
                 <div className="block md:hidden">
                   <IssueStatusBadge status={issue.status} />
                 </div>

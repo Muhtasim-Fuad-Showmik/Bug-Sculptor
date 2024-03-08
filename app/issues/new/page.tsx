@@ -65,7 +65,7 @@ const NewIssuePage = () => {
         <div className="grid w-full gap-1.5">
           <LabelWithErrorMessage
             htmlFor="description"
-            label="Your description"
+            label="Description"
             errorMessage={errors.description?.message}
           />
           <Controller

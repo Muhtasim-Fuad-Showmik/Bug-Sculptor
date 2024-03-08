@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
+import SimpleMDE from "react-simplemde-editor";
+import "easymde/dist/easymde.min.css";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 const NewIssuePage = () => {
   return (
@@ -15,7 +16,7 @@ const NewIssuePage = () => {
       </div>
       <div className="grid w-full gap-1.5">
         <Label htmlFor="description">Your description</Label>
-        <Textarea placeholder="Type your description here." id="description" />
+        <SimpleMDE placeholder="Type your description here." id="description" />
       </div>
       <Button>Submit</Button>
     </form>

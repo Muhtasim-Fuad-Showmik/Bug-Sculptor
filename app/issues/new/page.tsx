@@ -12,8 +12,8 @@ import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { useRouter } from "next/navigation";
+import LabelWithErrorMessage from "@/app/components/LabelWithErrorMessage";
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 
@@ -50,15 +50,11 @@ const NewIssuePage = () => {
         })}
       >
         <div className="grid w-full max-w-sm items-center gap-1.5">
-          <div className="flex items-center h-4 space-x-3">
-            <Label htmlFor="title">Title</Label>
-            {errors.title && (
-              <div className="flex items-center space-x-1 text-sm text-red-700">
-                <ExclamationTriangleIcon className="h-4 w-4" />
-                <span>{errors.title.message}</span>
-              </div>
-            )}
-          </div>
+          <LabelWithErrorMessage
+            htmlFor="title"
+            label="Title"
+            errorMessage={errors.title?.message}
+          />
           <Input
             type="text"
             id="title"
@@ -67,15 +63,11 @@ const NewIssuePage = () => {
           />
         </div>
         <div className="grid w-full gap-1.5">
-          <div className="flex items-center h-4 space-x-3">
-            <Label htmlFor="description">Your description</Label>
-            {errors.description && (
-              <div className="flex items-center space-x-1 text-sm text-red-700">
-                <ExclamationTriangleIcon className="h-4 w-4" />
-                <span>{errors.description.message}</span>
-              </div>
-            )}
-          </div>
+          <LabelWithErrorMessage
+            htmlFor="description"
+            label="Your description"
+            errorMessage={errors.description?.message}
+          />
           <Controller
             name="description"
             control={control}

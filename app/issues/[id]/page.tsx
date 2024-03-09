@@ -1,8 +1,3 @@
-import React from "react";
-// import delay from "delay";
-import prisma from "@/prisma/client";
-import ReactMarkdown from "react-markdown";
-import { notFound } from "next/navigation";
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
 import {
   Card,
@@ -11,6 +6,9 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import prisma from "@/prisma/client";
+import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
 
 const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
   // Redirect users to the "Not Found" page for invalid query parameters for the ID
@@ -27,11 +25,8 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
   // Return not found page for any non-existent issue
   if (!issue) notFound();
 
-  // Uncomment for delaying load and viewing the loading page
-  // await delay(2000);
-
   return (
-    <div>
+    <div className="max-w-3xl">
       <Card>
         <CardHeader>
           <CardTitle>{issue.title}</CardTitle>
@@ -40,7 +35,7 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
             <div>{issue.createdAt.toDateString()}</div>
           </CardDescription>
         </CardHeader>
-        <CardContent className="prose">
+        <CardContent className="prose max-w-full">
           <ReactMarkdown>{issue.description}</ReactMarkdown>
         </CardContent>
       </Card>

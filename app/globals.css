@@ -78,4 +78,8 @@
   body {
     @apply bg-background text-foreground font-tenorite;
   }
+
+  .link {
+    @apply text-blue-600 hover:underline;
+  }
 }

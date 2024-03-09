@@ -1,7 +1,6 @@
 "use client";
 
-import LabelWithErrorMessage from "@/app/components/LabelWithErrorMessage";
-import Loader from "@/app/components/Loader";
+import { LabelWithErrorMessage, Loader } from "@/app/components";
 import { createIssueSchema } from "@/app/validationSchemas";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";

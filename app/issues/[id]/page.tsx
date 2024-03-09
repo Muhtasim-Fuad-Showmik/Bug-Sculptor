@@ -1,5 +1,6 @@
 import React from "react";
 import prisma from "@/prisma/client";
+import ReactMarkdown from "react-markdown";
 import { notFound } from "next/navigation";
 import IssueStatusBadge from "@/app/components/IssueStatusBadge";
 import {
@@ -35,8 +36,8 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
             <p>{issue.createdAt.toDateString()}</p>
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <p>{issue.description}</p>
+        <CardContent className="prose">
+          <ReactMarkdown>{issue.description}</ReactMarkdown>
         </CardContent>
       </Card>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import { IssueStatusBadge } from "@/app/components";
 import {
   Table,
   TableBody,
@@ -8,10 +8,9 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import IssueStatusBadge from "@/app/components/IssueStatusBadge";
-import IssueToolbar from "./IssueToolbar";
 import prisma from "@/prisma/client";
 import Link from "next/link";
+import IssueToolbar from "./IssueToolbar";
 
 // Uncomment to delay load time and view the skeleton loading screen
 // import delay from "delay";

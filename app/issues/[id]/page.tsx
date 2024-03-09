@@ -1,4 +1,4 @@
-import IssueStatusBadge from "@/app/components/IssueStatusBadge";
+import { IssueStatusBadge } from "@/app/components";
 import {
   Card,
   CardContent,

@@ -1,9 +1,4 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import classnames from "classnames";
-import React from "react";
 import { ModeToggle } from "@/components/mode-toggle";
 import {
   NavigationMenu,
@@ -12,6 +7,10 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import classnames from "classnames";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NavBar = () => {
   const currentPath = usePathname();

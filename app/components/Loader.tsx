@@ -1,4 +1,3 @@
-import React from "react";
 import { hatch } from "ldrs";
 
 const Loader = ({ size, stroke }: { size?: string; stroke?: string }) => {

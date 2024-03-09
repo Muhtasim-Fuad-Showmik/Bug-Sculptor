@@ -1,7 +1,5 @@
+import { Skeleton } from "@/app/components";
 import { Button } from "@/components/ui/button";
-import React from "react";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const LoadingNewIssuePage = () => {
   return (

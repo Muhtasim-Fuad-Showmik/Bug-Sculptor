@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import SimpleMDE from "react-simplemde-editor";
+import dynamic from "next/dynamic";
 import "easymde/dist/easymde.min.css";
 import axios from "axios";
 import { useForm, Controller } from "react-hook-form";
@@ -15,6 +15,10 @@ import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import LabelWithErrorMessage from "@/app/components/LabelWithErrorMessage";
 import Loader from "@/app/components/Loader";
+
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+  ssr: false,
+});
 
 type IssueForm = z.infer<typeof createIssueSchema>;
 

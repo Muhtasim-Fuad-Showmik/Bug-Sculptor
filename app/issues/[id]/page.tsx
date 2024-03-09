@@ -1,4 +1,5 @@
 import React from "react";
+// import delay from "delay";
 import prisma from "@/prisma/client";
 import ReactMarkdown from "react-markdown";
 import { notFound } from "next/navigation";
@@ -26,6 +27,9 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
   // Return not found page for any non-existent issue
   if (!issue) notFound();
 
+  // Uncomment for delaying load and viewing the loading page
+  // await delay(2000);
+
   return (
     <div>
       <Card>
@@ -33,7 +37,7 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
           <CardTitle>{issue.title}</CardTitle>
           <CardDescription className="flex space-x-3 text-sm my-2">
             <IssueStatusBadge status={issue.status} />
-            <p>{issue.createdAt.toDateString()}</p>
+            <div>{issue.createdAt.toDateString()}</div>
           </CardDescription>
         </CardHeader>
         <CardContent className="prose">

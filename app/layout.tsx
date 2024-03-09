@@ -1,8 +1,8 @@
+import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
 import NavBar from "./NavBar";
-import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
 
 const tenorite = localFont({
   src: [

@@ -4,9 +4,9 @@ import Link from "next/link";
 const IssueToolbar = () => {
   return (
     <div className="mb-5">
-      <Button>
-        <Link href="/issues/new">+ Create</Link>
-      </Button>
+      <Link href="/issues/new">
+        <Button>+ Create</Button>
+      </Link>
     </div>
   );
 };

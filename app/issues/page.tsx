@@ -58,4 +58,18 @@ const IssuesPage = async () => {
   );
 };
 
+/**
+ * Next JS automatically considers pages without parameters in their routes
+ * to be static and therefore statically builds the page at build time on
+ * the server side (Server-side caching).
+ *
+ * We can reconfigure that using route segment configs as shown below.
+ * YOu can learn more about it from the following URL:
+ * https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+ */
+// Forces dynamic generation of the page on request time
+export const dynamic = "force-dynamic";
+// Forces revalidation of a generated page after each interval of the specified duration in seconds
+// export const revalidate = 0;
+
 export default IssuesPage;

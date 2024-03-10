@@ -30,6 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <script
+        type="module"
+        defer
+        src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/hatch.js"
+      ></script>
       <body className={tenorite.variable}>
         <ThemeProvider
           attribute="class"

@@ -1,7 +1,14 @@
-import { hatch } from "ldrs";
+import { useEffect } from "react";
 
-const Loader = ({ size, stroke }: { size?: string; stroke?: string }) => {
-  hatch.register();
+const Loader = async ({ size, stroke }: { size?: string; stroke?: string }) => {
+  useEffect(() => {
+    async function getLoader() {
+      const { hatch } = await import("ldrs");
+      hatch.register();
+    }
+    getLoader();
+  }, []);
+
   return (
     <l-hatch
       size={size ? size : "28"}

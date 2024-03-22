@@ -45,7 +45,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavBar />
-          <main className="p-5">{children}</main>
+          <main className="p-5 flex justify-center md:px-[10%]">
+            <div className="w-full">{children}</div>
+          </main>
         </ThemeProvider>
       </body>
     </html>

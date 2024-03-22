@@ -2,6 +2,7 @@ import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import EditIssueButton from "./EditIssueButton";
 import IssueDetails from "./IssueDetails";
+import DeleteIssueButton from "./DeleteIssueButton";
 
 const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
   // Redirect users to the "Not Found" page for invalid query parameters for the ID
@@ -19,12 +20,13 @@ const IssueDetailPage = async ({ params }: { params: { id: string } }) => {
   if (!issue) notFound();
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <div className="max-w-3xl">
+    <div className="grid grid-cols-1 md:grid-cols-5 gap-5">
+      <div className="md:col-span-4">
         <IssueDetails issue={issue} />
       </div>
-      <div>
+      <div className="flex flex-col gap-1 max-w-none md:max-w-48">
         <EditIssueButton issueId={issue.id} />
+        <DeleteIssueButton issueId={issue.id} />
       </div>
     </div>
   );

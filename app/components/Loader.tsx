@@ -1,13 +1,15 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
+import { hatch } from "ldrs";
 
 const Loader = async ({ size, stroke }: { size?: string; stroke?: string }) => {
-  useEffect(() => {
-    async function getLoader() {
-      const { hatch } = await import("ldrs");
-      hatch.register();
-    }
-    getLoader();
-  }, []);
+  // useEffect(() => {
+  //   async function getLoader() {
+  //     const { hatch } = await import("ldrs");
+  //     hatch.register();
+  //   }
+  //   getLoader();
+  // }, []);
+  hatch.register();
 
   return (
     <l-hatch
